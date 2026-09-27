@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Jyoti</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #0b1020;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at top, rgba(255, 110, 170, 0.35), transparent 35%),
+        radial-gradient(circle at bottom, rgba(130, 86, 255, 0.28), transparent 36%),
+        linear-gradient(135deg, #0b1020 0%, #181827 35%, #2d1734 100%);
+    }
+
+    .hidden { display: none !important; }
+
+    .login-screen {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .login-box {
+      width: min(440px, 92vw);
+      background: rgba(15, 20, 35, 0.65);
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 25px 70px rgba(0,0,0,0.45);
+      border-radius: 28px;
+      padding: 30px 24px 24px;
+      backdrop-filter: blur(16px);
+      position: relative;
+      z-index: 2;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ff74b1, #8b5cf6);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 11px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(2.1rem, 4vw, 2.8rem);
+      line-height: 1.1;
+      text-align: center;
+      background: linear-gradient(135deg, #ffd6e8, #ff8cb2, #d9d2ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 0.96rem;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 24px;
+    }
+
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .input-wrap {
+      position: relative;
+    }
+
+    .input-wrap input {
+      width: 100%;
+      padding: 16px 16px 16px 48px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      color: #fff;
+      font-size: 1rem;
+      outline: none;
+      transition: 0.25s ease;
+    }
+
+    .input-wrap input:focus {
+      border-color: rgba(255, 125, 180, 0.9);
+      box-shadow: 0 0 0 4px rgba(255,125,180,0.15);
+    }
+
+    .input-wrap .icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.1rem;
+      opacity: 0.8;
+    }
+
+    .login-btn {
+      border: none;
+      padding: 16px 18px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #ff5ea8, #8f5dff);
+      color: white;
+      font-weight: 800;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 16px 35px rgba(174, 94, 255, 0.38);
+    }
+
+    .login-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 38px rgba(174, 94, 255, 0.5);
+    }
+
+    .hint {
+      text-align: center;
+      margin-top: 16px;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.8rem;
+    }
+
+    .hint strong {
+      color: #ffd4e7;
+    }
+
+    .floating-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(8px);
+      z-index: 1;
+      animation: floaty 12s ease-in-out infinite alternate;
+    }
+
+    .orb-one { width: 250px; height: 250px; background: rgba(255, 105, 180, 0.18); left: 8%; top: 12%; }
+    .orb-two { width: 230px; height: 230px; background: rgba(126, 95, 255, 0.2); right: 10%; top: 18%; animation-delay: 2s; }
+    .orb-three { width: 200px; height: 200px; background: rgba(253, 197, 80, 0.12); left: 50%; bottom: 10%; transform: translateX(-50%); animation-delay: 4s; }
+
+    @keyframes floaty {
+      0% { transform: translateY(0px) scale(1); }
+      100% { transform: translateY(-18px) scale(1.06); }
+    }
+
+    .surprise-screen {
+      min-height: 100vh;
+      padding: 28px 20px 50px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .surprise-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      background: rgba(17, 20, 35, 0.52);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: 0 18px 60px rgba(0,0,0,0.28);
+      backdrop-filter: blur(14px);
+    }
+
+    .hero-left h2 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 4vw, 4rem);
+      letter-spacing: 0.04em;
+      background: linear-gradient(135deg, #ffd6ea, #ffb1d0, #d3c6ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-left p {
+      margin: 0;
+      color: rgba(255,255,255,0.82);
+      font-size: 1.04rem;
+      line-height: 1.7;
+    }
+
+    .date-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 18px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 999px;
+      padding: 10px 16px;
+      color: #fff;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.74rem;
+    }
+
+    .date-pill .dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: #ff78b1;
+      box-shadow: 0 0 16px rgba(255, 120, 177, 0.9);
+    }
+
+    .cake-card {
+      position: relative;
+      min-height: 410px;
+      border-radius: 26px;
+      background:
+        radial-gradient(circle at 50% 20%, rgba(255,255,255,0.18), transparent 20%),
+        linear-gradient(180deg, rgba(255, 149, 178, 0.24), rgba(116, 86, 255, 0.08));
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 18px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .cake {
+      position: relative;
+      width: 280px;
+      height: 280px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      filter: drop-shadow(0 26px 25px rgba(255, 134, 176, 0.2));
+    }
+
+    .cake-top {
+      position: absolute;
+      bottom: 142px;
+      width: 190px;
+      height: 34px;
+      background: linear-gradient(180deg, #ffe9f2, #ffbfce);
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 200, 218, 0.5);
+    }
+
+    .cake-body {
+      position: absolute;
+      bottom: 20px;
+      width: 230px;
+      height: 135px;
+      background: linear-gradient(180deg, #ffd4e9, #ffc0d7 35%, #ff9fbd 100%);
+      border-radius: 20px 20px 30px 30px;
+      box-shadow: inset 0 -18px 26px rgba(255, 90, 145, 0.18);
+    }
+
+    .cake-body::before,
+    .cake-body::after {
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background: #fff7fb;
+      border-radius: 50%;
+      top: 22px;
+      box-shadow: 0 0 0 4px rgba(255,255,255,0.12);
+    }
+
+    .cake-body::before { left: 28px; }
+    .cake-body::after { right: 28px; }
+
+    .candle {
+      position: absolute;
+      width: 12px;
+      height: 48px;
+      background: #fffafc;
+      border-radius: 12px;
+      bottom: 155px;
+      box-shadow: inset 0 -5px 0 rgba(255, 100, 154, 0.2);
+    }
+    .candle.one { left: 82px; }
+    .candle.two { left: 135px; }
+    .candle.three { left: 188px; }
+    .candle::before {
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background: radial-gradient(circle at 50% 40%, #fff7c1, #ffc641 70%);
+      border-radius: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -18px;
+      box-shadow: 0 0 18px rgba(255, 214, 84, 0.9);
+      animation: flicker 0.9s ease-in-out infinite alternate;
+    }
+
+    @keyframes flicker {
+      0% { transform: translateX(-50%) scale(0.9); }
+      100% { transform: translateX(-50%) scale(1.2); }
+    }
+
+    .countdown-wrap {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(110px, 1fr));
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .count-box {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 22px;
+      padding: 22px 14px;
+      text-align: center;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+    }
+
+    .count-num {
+      display: block;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 900;
+      background: linear-gradient(135deg, #ffddf0, #fd8ec0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .count-label {
+      display: block;
+      margin-top: 8px;
+      font-size: 0.73rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.72);
+    }
+
+    .message-card {
+      margin-top: 26px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .note {
+      padding: 22px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.03);
+      line-height: 1.8;
+      color: rgba(255,255,255,0.82);
+      font-size: 1rem;
+    }
+
+    .note strong {
+      color: #ffb7d7;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 22px;
+      flex-wrap: wrap;
+    }
+
+    .control-btn {
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .control-btn:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .heart-row {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -50px;
+      font-size: 22px;
+      opacity: 0.7;
+      animation: fall linear forwards;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) scale(0.8) rotate(0deg);
+        opacity: 0;
+      }
+      10% { opacity: 0.8; }
+      100% {
+        transform: translateY(-115vh) scale(1.15) rotate(18deg);
+        opacity: 0;
+      }
+    }
+
+    .sound-bars {
+      display: inline-flex;
+      align-items: end;
+      gap: 6px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    .sound-bars span {
+      width: 5px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #ffd8f0, #ff9dc3);
+      animation: pulse 1s infinite alternate ease-in-out;
+    }
+
+    .sound-bars span:nth-child(1) { height: 8px; animation-delay: 0.1s; }
+    .sound-bars span:nth-child(2) { height: 13px; animation-delay: 0.2s; }
+    .sound-bars span:nth-child(3) { height: 18px; animation-delay: 0.3s; }
+    .sound-bars span:nth-child(4) { height: 12px; animation-delay: 0.4s; }
+
+    @keyframes pulse {
+      0% { transform: scaleY(0.7); opacity: 0.6; }
+      100% { transform: scaleY(1.2); opacity: 1; }
+    }
+
+    @media (max-width: 850px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .message-card {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .countdown-wrap {
+        grid-template-columns: repeat(2, minmax(100px, 1fr));
+      }
+
+      .cake-card {
+        min-height: 340px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="loginScreen" class="login-screen">
+    <div class="floating-orb orb-one"></div>
+    <div class="floating-orb orb-two"></div>
+    <div class="floating-orb orb-three"></div>
+
+    <div class="login-box">
+      <div class="badge">Private Key</div>
+      <h1>For Jyoti</h1>
+      <div class="subtitle">Enter the secret code to unlock your birthday surprise</div>
+
+      <form id="loginForm" class="login-form">
+        <div class="input-wrap">
+          <span class="icon">💌</span>
+          <input id="secretInput" type="password" placeholder="Enter special code" required />
+        </div>
+
+        <button type="submit" class="login-btn">Open My Gift</button>
+      </form>
+
+      <div class="hint">Hint: <strong>october3</strong> or <strong>love0310</strong></div>
+    </div>
+  </div>
+
+  <div id="surpriseScreen" class="surprise-screen hidden">
+    <div class="heart-row" id="hearts"></div>
+
+    <div class="surprise-inner">
+      <section class="hero">
+        <div class="hero-left">
+          <h2>Happy Birthday, Jyoti 💖</h2>
+          <p>
+            Every day with you feels like a beautiful dream — full of laughter, warmth,
+            and endless love. Your smile is my peace, your presence is my happiness,
+            and your love is my forever.
+          </p>
+          <div class="date-pill"><span class="dot"></span> October 3 Birthday</div>
+        </div>
+
+        <div class="cake-card">
+          <div class="cake">
+            <div class="candle one"></div>
+            <div class="candle two"></div>
+            <div class="candle three"></div>
+            <div class="cake-top"></div>
+            <div class="cake-body"></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="countdown-wrap">
+        <div class="count-box">
+          <span id="days" class="count-num">00</span>
+          <span class="count-label">Days</span>
+        </div>
+        <div class="count-box">
+          <span id="hours" class="count-num">00</span>
+          <span class="count-label">Hours</span>
+        </div>
+        <div class="count-box">
+          <span id="minutes" class="count-num">00</span>
+          <span class="count-label">Minutes</span>
+        </div>
+        <div class="count-box">
+          <span id="seconds" class="count-num">00</span>
+          <span class="count-label">Seconds</span>
+        </div>
+      </div>
+
+      <div class="message-card">
+        <div class="note">
+          <strong>My sweetest wish:</strong><br />
+          May your life always bloom with happiness, your heart stay full of peace, and
+          your every dream turn into a beautiful reality. May this birthday bring you
+          even more reasons to smile.
+        </div>
+
+        <div class="note">
+          <strong>For you, always:</strong><br />
+          You are my favorite person, my comfort, my joy, and my home. I love you more
+          than words can say, and I will keep choosing you in every lifetime, every moment,
+          every heartbeat.
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="musicToggle" class="control-btn" type="button">
+          <span class="sound-bars"><span></span><span></span><span></span><span></span></span>
+          Music On
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <audio id="birthdayAudio" loop autoplay playsinline>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script>
+    const loginScreen = document.getElementById('loginScreen');
+    const surpriseScreen = document.getElementById('surpriseScreen');
+    const loginForm = document.getElementById('loginForm');
+    const secretInput = document.getElementById('secretInput');
+    const audio = document.getElementById('birthdayAudio');
+    const musicToggle = document.getElementById('musicToggle');
+
+    const validCodes = ['october3', 'love0310', '0310', 'mylove'];
+
+    loginForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const value = secretInput.value.trim().toLowerCase();
+
+      if (validCodes.includes(value)) {
+        loginScreen.classList.add('hidden');
+        surpriseScreen.classList.remove('hidden');
+        createHearts();
+        updateCountdown();
+
+        if (audio) {
+          audio.play().catch(() => {
+            console.log('Autoplay was blocked, click music button to start.');
+          });
+        }
+      } else {
+        secretInput.value = '';
+        secretInput.focus();
+        secretInput.placeholder = 'Wrong code — try again';
+        secretInput.style.borderColor = 'rgba(255,110,160,0.9)';
+      }
+    });
+
+    function createHearts() {
+      const heartRow = document.getElementById('hearts');
+      heartRow.innerHTML = '';
+
+      for (let i = 0; i < 24; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.textContent = i % 2 === 0 ? '💖' : '💗';
+        heart.style.left = Math.random() * 100 + '%';
+        heart.style.animationDuration = (8 + Math.random() * 10) + 's';
+        heart.style.animationDelay = (Math.random() * 2) + 's';
+        heart.style.fontSize = (18 + Math.random() * 18) + 'px';
+        heartRow.appendChild(heart);
+      }
+    }
+
+    function getNextBirthday() {
+      const now = new Date();
+      let birthday = new Date(now.getFullYear(), 9, 3, 0, 0, 0);
+      if (birthday < now) {
+        birthday = new Date(now.getFullYear() + 1, 9, 3, 0, 0, 0);
+      }
+      return birthday;
+    }
+
+    function updateCountdown() {
+      const target = getNextBirthday();
+      const now = new Date();
+      let diff = target - now;
+
+      if (diff <= 0) {
+        diff = 0;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById('days').textContent = String(days).padStart(2, '0');
+      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    }
+
+    setInterval(updateCountdown, 1000);
+
+    musicToggle.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        musicToggle.innerHTML = '<span class="sound-bars"><span></span><span></span><span></span><span></span></span> Music On';
+      } else {
+        audio.pause();
+        musicToggle.innerHTML = '<span>🔇</span> Music Off';
+      }
+    });
+  </script>
+</body>
+</html>
