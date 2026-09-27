@@ -1,23 +1,887 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1.0" />
-<title>Surprise For You, Jyoti 💖</title>
-<style>
-:root{--pink:#ff6fae;--violet:#8d6bff;--glass:rgba(255,255,255,.1)}*{box-sizing:border-box}body{margin:0;color:#fff;font-family:Inter,system-ui,sans-serif;background:#090b18;overflow-x:hidden}body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 15% 15%,#77345d,transparent 30%),radial-gradient(circle at 85% 80%,#34256e,transparent 35%),linear-gradient(135deg,#090b18,#19152d 55%,#32182d)}body:after{content:"";position:fixed;inset:0;z-index:-1;opacity:.18;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:34px 34px}.hide{display:none!important}.screen{min-height:100vh;display:grid;place-items:center;padding:22px}.glass{background:var(--glass);border:1px solid #ffffff2e;box-shadow:0 24px 90px #0007;backdrop-filter:blur(20px)}.login{width:min(430px,94vw);padding:38px 28px;border-radius:32px;text-align:center}.eyebrow{color:#ffc2dd;letter-spacing:.18em;font-size:.72rem;text-transform:uppercase;font-weight:800}.login h1{font-size:clamp(2.4rem,10vw,4rem);margin:12px 0 10px;line-height:1;background:linear-gradient(135deg,#fff,#ff9fc7 55%,#c6b8ff);color:transparent;background-clip:text}.login p{color:#ffffffb8;line-height:1.6}.field{display:flex;gap:10px;align-items:center;border:1px solid #fff2;background:#0003;border-radius:18px;padding:5px 8px 5px 18px}.field input{min-width:0;flex:1;border:0;outline:0;background:transparent;color:#fff;font-size:1.05rem;letter-spacing:.35em}.btn{border:0;border-radius:16px;padding:15px 20px;color:#fff;font-weight:800;cursor:pointer;background:linear-gradient(135deg,var(--pink),var(--violet));box-shadow:0 12px 30px #b15bca66;transition:.2s}.btn:hover{transform:translateY(-2px)}.login .btn{width:100%;margin-top:15px}.hint{font-size:.75rem;color:#ffffff91;margin-top:18px}.app{max-width:1150px;margin:auto;padding:24px 18px 50px}.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}.brand{font-weight:900;letter-spacing:.08em;font-size:.85rem}.brand b{color:#ff9fc7}.music-btn{border:1px solid #fff3;background:#ffffff10;color:#fff;border-radius:999px;padding:10px 14px;cursor:pointer}.equalizer{display:inline-flex;align-items:end;gap:3px;height:15px;margin-right:6px;vertical-align:middle}.equalizer i{display:block;width:3px;background:#ffacd0;border-radius:4px;animation:eq .8s infinite alternate}.equalizer i:nth-child(1){height:7px}.equalizer i:nth-child(2){height:14px;animation-delay:.2s}.equalizer i:nth-child(3){height:10px;animation-delay:.4s}@keyframes eq{to{transform:scaleY(.35)}}.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:stretch}.hero-copy{padding:clamp(26px,5vw,58px);border-radius:34px;position:relative;overflow:hidden}.hero h2{font-size:clamp(2.6rem,7vw,6rem);line-height:.95;margin:12px 0 22px;letter-spacing:-.07em;background:linear-gradient(135deg,#fff,#ffadd0 50%,#b8aaff);color:transparent;background-clip:text}.hero p{max-width:620px;color:#fffbd0;line-height:1.8;font-size:1.04rem}.tag{display:inline-flex;align-items:center;gap:8px;border:1px solid #fff3;border-radius:999px;padding:9px 14px;color:#ffd3e5;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em}.tag b{width:8px;height:8px;background:#ff78b4;border-radius:50%;box-shadow:0 0 14px #ff78b4}.portrait{min-height:410px;border-radius:34px;display:grid;place-items:center;position:relative;overflow:hidden;background:linear-gradient(145deg,#ff8cae55,#7160df44),#ffffff08}.orbit{width:270px;height:270px;border:1px solid #fff4;border-radius:50%;position:absolute;animation:spin 16s linear infinite}.orbit:before,.orbit:after{content:"";position:absolute;border-radius:50%;width:16px;height:16px;background:#ff9dc7;box-shadow:0 0 28px #ff9dc7;top:25px;left:50%}.orbit:after{top:auto;left:auto;right:7px;bottom:60px;background:#b7a7ff;box-shadow:0 0 28px #b7a7ff}@keyframes spin{to{transform:rotate(360deg)}}.cake{font-size:8rem;z-index:1;filter:drop-shadow(0 20px 25px #ff6fae55);animation:bob 3s ease-in-out infinite}@keyframes bob{50%{transform:translateY(-10px) rotate(2deg)}}.cake-label{position:absolute;bottom:25px;color:#ffffffa8;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase}.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:22px 0}.count{padding:20px 10px;border-radius:22px;text-align:center}.count strong{display:block;font-size:clamp(2rem,6vw,3.8rem);line-height:1;color:#ffd0e4}.count small{display:block;margin-top:9px;color:#ffffff99;letter-spacing:.13em;text-transform:uppercase;font-size:.65rem}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{padding:26px;border-radius:26px}.card h3{margin:0 0 12px;color:#ffc3dc}.card p{color:#ffffffbd;line-height:1.8;margin:0}.quote{font-size:1.25rem;line-height:1.65!important;color:#fff!important}.quote em{color:#ff9fc7;font-style:normal}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}.secondary{background:#ffffff12;border:1px solid #fff3;box-shadow:none}.secret{margin-top:18px;padding:0 18px;max-height:0;overflow:hidden;transition:.5s;color:#ffd0e5;line-height:1.7}.secret.open{max-height:180px;padding-top:12px}.scene{margin-top:18px;padding:28px;border-radius:28px;overflow:hidden}.scene h3{margin:0 0 6px;color:#ffc3dc}.scene p{margin:0 0 24px;color:#ffffffa8}.bears{height:180px;position:relative;display:flex;justify-content:center;align-items:end;gap:30px}.bear{position:relative;width:90px;height:105px;background:#b87345;border-radius:48% 48% 42% 42%;animation:bearFloat 2.8s ease-in-out infinite}.bear:before,.bear:after{content:"";position:absolute;width:30px;height:30px;border-radius:50%;background:#b87345;top:-12px}.bear:before{left:3px}.bear:after{right:3px}.ear{position:absolute;width:15px;height:15px;border-radius:50%;background:#71402c;top:-4px;z-index:2}.bear .ear.left{left:11px}.bear .ear.right{right:11px}.face{position:absolute;left:50%;top:27px;transform:translateX(-50%);width:57px;height:46px;border-radius:50%;background:#e4a477}.face:before{content:"•  •";white-space:pre;position:absolute;top:5px;left:13px;font-size:18px;color:#392018;letter-spacing:5px}.face:after{content:"♥";position:absolute;left:23px;top:23px;color:#5b211e;font-size:14px}.bear .belly{position:absolute;left:16px;bottom:10px;width:58px;height:48px;border-radius:50%;background:#e4a477}.bear .arm{position:absolute;width:25px;height:15px;border-radius:15px;background:#b87345;top:57px;z-index:3}.bear .arm.left{left:-13px;transform:rotate(25deg)}.bear .arm.right{right:-13px;transform:rotate(-25deg)}.bear.two{background:#f09baf;animation-delay:.35s}.bear.two:before,.bear.two:after,.bear.two .arm{background:#f09baf}.bear.two .ear{background:#b85676}.bear.two .face,.bear.two .belly{background:#ffd0d9}.bear.two .face:after{content:"♥";color:#d74271}.kiss-heart{position:absolute;top:38px;font-size:2.1rem;animation:kiss 1.4s infinite alternate}.fight{position:absolute;top:20px;font-size:1.8rem;opacity:0;animation:fight 5s infinite}.care{position:absolute;bottom:0;font-size:1.9rem;animation:care 3s infinite}.bear-text{position:absolute;bottom:3px;left:50%;transform:translateX(-50%);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:#fff9;white-space:nowrap}@keyframes bearFloat{50%{transform:translateY(-8px)}}@keyframes kiss{to{transform:translateX(20px) scale(1.25)}}@keyframes fight{0%,55%,100%{opacity:0;transform:translateX(0)}65%,78%{opacity:1;transform:translateX(-40px) rotate(-15deg)}}@keyframes care{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}.hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:-1}.heart{position:absolute;bottom:-30px;animation:rise linear forwards;opacity:.8}@keyframes rise{to{transform:translateY(-110vh) rotate(30deg);opacity:0}}@media(max-width:780px){.hero{grid-template-columns:1fr}.portrait{min-height:280px}.grid{grid-template-columns:1fr}}@media(max-width:480px){.countdown{gap:8px}.count{padding:16px 4px}.topbar{align-items:flex-start;gap:10px}.music-btn{font-size:.75rem}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Surprise For You, Jyoti 💖</title>
+  <style>
+    :root {
+      --pink: #ff6fae;
+      --violet: #8d6bff;
+      --pink-soft: #ffd7ea;
+      --gold: #ffd87a;
+      --glass: rgba(255, 255, 255, 0.09);
+      --line: rgba(255, 255, 255, 0.18);
+      --text: #fff8fd;
+      --muted: rgba(255,255,255,0.8);
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      font-family: Inter, "Segoe UI", sans-serif;
+      background: #090b18;
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -3;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(120, 56, 89, 0.85), transparent 26%),
+        radial-gradient(circle at 80% 75%, rgba(73, 48, 131, 0.9), transparent 32%),
+        linear-gradient(135deg, #090b18 0%, #171426 45%, #26142a 100%);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      opacity: 0.18;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+
+    .hide { display: none !important; }
+    .screen {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 22px;
+    }
+
+    .glass {
+      background: var(--glass);
+      border: 1px solid var(--line);
+      box-shadow: 0 24px 90px rgba(0,0,0,0.42);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .login {
+      width: min(430px, 94vw);
+      padding: 38px 28px;
+      border-radius: 32px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .login::before {
+      content: "💖";
+      position: absolute;
+      font-size: 120px;
+      right: -18px;
+      top: -16px;
+      opacity: 0.08;
+    }
+
+    .eyebrow {
+      color: #ffc2dd;
+      letter-spacing: 0.18em;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .login h1 {
+      font-size: clamp(2.4rem, 10vw, 4rem);
+      margin: 12px 0 10px;
+      line-height: 1;
+      background: linear-gradient(135deg, #fff, #ff9fc7 55%, #c6b8ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .login p {
+      color: rgba(255,255,255,0.75);
+      line-height: 1.6;
+      margin: 0 0 22px;
+    }
+
+    .field {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(0,0,0,0.18);
+      border-radius: 18px;
+      padding: 5px 12px 5px 18px;
+    }
+
+    .field span {
+      font-size: 1.2rem;
+    }
+
+    .field input {
+      border: 0;
+      outline: none;
+      background: transparent;
+      color: white;
+      flex: 1;
+      font-size: 1.05rem;
+      letter-spacing: 0.35em;
+      min-width: 0;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 16px;
+      padding: 15px 20px;
+      color: white;
+      font-weight: 800;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--pink), var(--violet));
+      box-shadow: 0 12px 30px rgba(177, 91, 202, 0.45);
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+    }
+
+    .login .btn {
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    .hint {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.8);
+      margin-top: 18px;
+    }
+
+    .app {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px 18px 68px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 22px;
+      gap: 10px;
+    }
+
+    .brand {
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      font-size: 0.85rem;
+    }
+
+    .brand b {
+      color: #ff9fc7;
+    }
+
+    .music-btn {
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.08);
+      color: white;
+      border-radius: 999px;
+      padding: 10px 14px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .equalizer {
+      display: inline-flex;
+      align-items: end;
+      gap: 3px;
+      height: 15px;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+
+    .equalizer i {
+      display: block;
+      width: 3px;
+      border-radius: 4px;
+      background: #ffacd0;
+      animation: eq 0.8s infinite alternate;
+    }
+
+    .equalizer i:nth-child(1) { height: 7px; }
+    .equalizer i:nth-child(2) { height: 14px; animation-delay: 0.2s; }
+    .equalizer i:nth-child(3) { height: 10px; animation-delay: 0.4s; }
+
+    @keyframes eq {
+      to { transform: scaleY(0.35); }
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .hero-copy,
+    .portrait,
+    .card,
+    .scene,
+    .count {
+      border-radius: 30px;
+    }
+
+    .hero-copy {
+      padding: clamp(26px, 5vw, 58px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-copy::after {
+      content: "03";
+      position: absolute;
+      right: 18px;
+      bottom: -58px;
+      font-size: 220px;
+      font-weight: 900;
+      color: rgba(255,255,255,0.06);
+      user-select: none;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 999px;
+      padding: 9px 14px;
+      color: #ffd3e5;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .tag b {
+      width: 8px;
+      height: 8px;
+      display: inline-block;
+      border-radius: 50%;
+      background: #ff78b4;
+      box-shadow: 0 0 18px rgba(255,120,180,0.9);
+    }
+
+    .hero h2 {
+      font-size: clamp(2.6rem, 7vw, 6rem);
+      line-height: 0.95;
+      margin: 16px 0 18px;
+      letter-spacing: -0.085em;
+      background: linear-gradient(135deg, #fff, #ffadd0 50%, #b8aaff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 620px;
+      color: rgba(255, 255, 222, 0.95);
+      line-height: 1.8;
+      font-size: 1.04rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .portrait {
+      min-height: 410px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(145deg, rgba(255,140,174,0.32), rgba(113,96,223,0.24)), rgba(255,255,255,0.04);
+    }
+
+    .orbit {
+      width: 270px;
+      height: 270px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50%;
+      position: absolute;
+      animation: spin 16s linear infinite;
+    }
+
+    .orbit::before,
+    .orbit::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      width: 16px;
+      height: 16px;
+      background: #ff9dc7;
+      box-shadow: 0 0 26px #ff9dc7;
+      top: 25px;
+      left: 50%;
+    }
+
+    .orbit::after {
+      top: auto;
+      left: auto;
+      right: 7px;
+      bottom: 60px;
+      background: #b7a7ff;
+      box-shadow: 0 0 24px #b7a7ff;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .cake {
+      font-size: 8rem;
+      z-index: 1;
+      filter: drop-shadow(0 20px 25px rgba(255, 111, 174, 0.45));
+      animation: bob 3s ease-in-out infinite;
+    }
+
+    @keyframes bob {
+      50% { transform: translateY(-10px) rotate(2deg); }
+    }
+
+    .cake-label {
+      position: absolute;
+      bottom: 25px;
+      color: rgba(255,255,255,0.82);
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin: 22px 0;
+    }
+
+    .count {
+      padding: 20px 10px;
+      text-align: center;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .count strong {
+      display: block;
+      font-size: clamp(2rem, 6vw, 3.8rem);
+      line-height: 1;
+      color: #ffd0e4;
+    }
+
+    .count small {
+      display: block;
+      margin-top: 9px;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      font-size: 0.65rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .card {
+      padding: 26px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .card h3 {
+      margin: 0 0 12px;
+      color: #ffc3dc;
+    }
+
+    .card p {
+      color: rgba(255,255,255,0.8);
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .quote {
+      font-size: 1.25rem;
+      line-height: 1.65 !important;
+      color: #fff !important;
+    }
+
+    .quote em {
+      color: #ff9fc7;
+      font-style: normal;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .secondary {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: none;
+    }
+
+    .secret {
+      margin-top: 18px;
+      padding: 0 18px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, padding 0.5s ease;
+      color: #ffd0e5;
+      line-height: 1.7;
+    }
+
+    .secret.open {
+      max-height: 180px;
+      padding-top: 12px;
+    }
+
+    .scene {
+      margin-top: 18px;
+      padding: 28px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .scene h3 {
+      margin: 0 0 6px;
+      color: #ffc3dc;
+    }
+
+    .scene p {
+      margin: 0 0 20px;
+      color: rgba(255,255,255,0.74);
+    }
+
+    .bears {
+      height: 200px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      gap: 30px;
+    }
+
+    .bear {
+      position: relative;
+      width: 90px;
+      height: 105px;
+      background: #b87345;
+      border-radius: 48% 48% 42% 42%;
+      animation: bearFloat 2.8s ease-in-out infinite;
+      z-index: 2;
+    }
+
+    .bear::before,
+    .bear::after {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #b87345;
+      top: -12px;
+    }
+
+    .bear::before { left: 3px; }
+    .bear::after { right: 3px; }
+
+    .ear {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: #71402c;
+      top: -4px;
+      z-index: 2;
+    }
+
+    .ear.left { left: 11px; }
+    .ear.right { right: 11px; }
+
+    .face {
+      position: absolute;
+      left: 50%;
+      top: 27px;
+      transform: translateX(-50%);
+      width: 57px;
+      height: 46px;
+      border-radius: 50%;
+      background: #e4a477;
+    }
+
+    .face::before {
+      content: "•  •";
+      white-space: pre;
+      position: absolute;
+      top: 5px;
+      left: 13px;
+      font-size: 18px;
+      color: #392018;
+      letter-spacing: 5px;
+    }
+
+    .face::after {
+      content: "♥";
+      position: absolute;
+      left: 23px;
+      top: 23px;
+      color: #5b211e;
+      font-size: 14px;
+    }
+
+    .belly {
+      position: absolute;
+      left: 16px;
+      bottom: 10px;
+      width: 58px;
+      height: 48px;
+      border-radius: 50%;
+      background: #e4a477;
+    }
+
+    .arm {
+      position: absolute;
+      width: 25px;
+      height: 15px;
+      border-radius: 15px;
+      background: #b87345;
+      top: 57px;
+      z-index: 3;
+    }
+
+    .arm.left { left: -13px; transform: rotate(25deg); }
+    .arm.right { right: -13px; transform: rotate(-25deg); }
+
+    .bear.two {
+      background: #f09baf;
+      animation-delay: 0.35s;
+    }
+
+    .bear.two::before,
+    .bear.two::after,
+    .bear.two .arm { background: #f09baf; }
+
+    .bear.two .ear { background: #b85676; }
+    .bear.two .face,
+    .bear.two .belly { background: #ffd0d9; }
+
+    .bear.two .face::after { content: "♥"; color: #d74271; }
+
+    .kiss-heart {
+      position: absolute;
+      top: 38px;
+      font-size: 2.1rem;
+      animation: kiss 1.4s infinite alternate;
+      z-index: 4;
+    }
+
+    .fight {
+      position: absolute;
+      top: 20px;
+      font-size: 1.8rem;
+      opacity: 0;
+      animation: fight 5s infinite;
+      z-index: 3;
+    }
+
+    .care {
+      position: absolute;
+      bottom: 0px;
+      font-size: 1.9rem;
+      animation: care 3s infinite;
+      z-index: 3;
+    }
+
+    .bear-text {
+      position: absolute;
+      bottom: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      white-space: nowrap;
+    }
+
+    @keyframes bearFloat {
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes kiss {
+      to { transform: translateX(20px) scale(1.25); }
+    }
+
+    @keyframes fight {
+      0%, 55%, 100% { opacity: 0; transform: translateX(0) rotate(0); }
+      65%, 78% { opacity: 1; transform: translateX(-40px) rotate(-15deg); }
+    }
+
+    @keyframes care {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    .sparkles, .hearts {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.9);
+      box-shadow: 0 0 12px rgba(255,255,255,0.8);
+      animation: twinkle 2.6s ease-in-out infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; transform: scale(0.5); }
+      50% { opacity: 1; transform: scale(1.4); }
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -30px;
+      animation: rise linear forwards;
+      opacity: 0.8;
+    }
+
+    @keyframes rise {
+      to {
+        transform: translateY(-110vh) rotate(30deg);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 780px) {
+      .hero { grid-template-columns: 1fr; }
+      .portrait { min-height: 280px; }
+      .grid { grid-template-columns: 1fr; }
+      .bears { gap: 18px; }
+    }
+
+    @media (max-width: 480px) {
+      .countdown { gap: 8px; }
+      .count { padding: 16px 4px; }
+      .topbar { align-items: flex-start; }
+      .music-btn { font-size: 0.75rem; }
+      .bear-text { font-size: 0.64rem; }
+    }
+  </style>
 </head>
 <body>
-<section id="login" class="screen"><div class="login glass"><div class="eyebrow">A little secret for you</div><h1>Jyoti 💖</h1><p>Enter the special PIN and open a surprise made with love, just for you.</p><form id="form"><div class="field"><span>🔐</span><input id="pin" type="password" inputmode="numeric" maxlength="4" placeholder="4-digit PIN" required></div><button class="btn" type="submit">Unlock My Surprise ✨</button></form><div class="hint">Enter your secret PIN to continue</div></div></section>
-<main id="main" class="app hide"><div class="topbar"><div class="brand">SURPRISE <b>FOR YOU</b> ✦</div><button id="music" class="music-btn"><span class="equalizer"><i></i><i></i><i></i></span><span id="musicText">Play Love Song</span></button></div>
-<section class="hero"><div class="hero-copy glass"><span class="tag"><b></b> October 3 • Your special day</span><h2>Happy Birthday,<br>Jyoti!</h2><p>Some people make life beautiful just by being in it. You are my favorite person, my happiest place, and the sweetest part of every day.</p></div><div class="portrait glass"><div class="orbit"></div><div class="cake">🎂</div><div class="cake-label">Made with love ♡</div></div></section>
-<section class="countdown"><div class="count glass"><strong id="d">00</strong><small>Days</small></div><div class="count glass"><strong id="h">00</strong><small>Hours</small></div><div class="count glass"><strong id="m">00</strong><small>Minutes</small></div><div class="count glass"><strong id="s">00</strong><small>Seconds</small></div></section>
-<section class="grid"><article class="card glass"><h3>My sweetest wish ✨</h3><p>May every dream in your heart find its way to you. May your smile stay bright, your heart stay peaceful, and every new year of your life be more beautiful than the last.</p></article><article class="card glass"><h3>A little message for you 💌</h3><p class="quote">“You are not just special today, Jyoti. You are special in <em>every moment</em>, every heartbeat, and every beautiful memory.”</p><div class="actions"><button id="reveal" class="btn secondary">Open secret message</button></div><div id="secret" class="secret">I hope this tiny page makes you smile as much as you make me smile. Happy Birthday, my love. You are my forever favourite. 💗</div></article></section>
-<section class="scene glass"><h3>Our cute little love story 🧸</h3><p>Sometimes we kiss, sometimes we fight, but we always care for each other.</p><div class="bears"><div class="bear"><i class="ear left"></i><i class="ear right"></i><div class="face"></div><div class="belly"></div><i class="arm left"></i><i class="arm right"></i></div><div class="kiss-heart">💖</div><div class="fight">💥</div><div class="care">🩹</div><div class="bear two"><i class="ear left"></i><i class="ear right"></i><div class="face"></div><div class="belly"></div><i class="arm left"></i><i class="arm right"></i></div><div class="bear-text">kiss • silly fight • care • forever</div></div></section>
-</main><div id="hearts" class="hearts"></div><audio id="audio" loop preload="auto"><source src="Love%20Song.aac" type="audio/aac"><source src="love-song.mp3" type="audio/mpeg"></audio>
-<script>
-const PIN='0412',login=document.getElementById('login'),main=document.getElementById('main'),audio=document.getElementById('audio'),music=document.getElementById('music'),musicText=document.getElementById('musicText');document.getElementById('form').addEventListener('submit',e=>{e.preventDefault();if(document.getElementById('pin').value===PIN){login.classList.add('hide');main.classList.remove('hide');hearts();audio.play().catch(()=>{});update()}else{document.getElementById('pin').value='';document.getElementById('pin').placeholder='Wrong PIN — try again'}});music.addEventListener('click',()=>{if(audio.paused){audio.play();musicText.textContent='Pause Love Song'}else{audio.pause();musicText.textContent='Play Love Song'}});document.getElementById('reveal').addEventListener('click',()=>document.getElementById('secret').classList.toggle('open'));function target(){let n=new Date(),t=new Date(n.getFullYear(),9,3);if(t<=n)t=new Date(n.getFullYear()+1,9,3);return t}function update(){let x=Math.max(0,target()-new Date()),d=Math.floor(x/864e5),h=Math.floor(x/36e5)%24,m=Math.floor(x/6e4)%60,s=Math.floor(x/1e3)%60;['d','h','m','s'].forEach((id,i)=>document.getElementById(id).textContent=String([d,h,m,s][i]).padStart(2,'0'))}setInterval(update,1000);function hearts(){let box=document.getElementById('hearts');for(let i=0;i<28;i++){let e=document.createElement('span');e.className='heart';e.textContent=i%2?'💖':'💗';e.style.left=Math.random()*100+'%';e.style.fontSize=16+Math.random()*22+'px';e.style.animationDuration=7+Math.random()*9+'s';e.style.animationDelay=Math.random()*4+'s';box.appendChild(e)}}
-</script>
+  <div id="sparkles" class="sparkles"></div>
+  <div id="hearts" class="hearts"></div>
+
+  <section id="login" class="screen">
+    <div class="login glass">
+      <div class="eyebrow">A little secret for you</div>
+      <h1>Jyoti 💖</h1>
+      <p>Enter the special PIN and open a surprise made with love, just for you.</p>
+      <form id="form">
+        <div class="field">
+          <span>🔐</span>
+          <input id="pin" type="password" inputmode="numeric" maxlength="4" placeholder="4-digit PIN" required />
+        </div>
+        <button class="btn" type="submit">Unlock My Surprise ✨</button>
+      </form>
+      <div class="hint">Enter the secret PIN to continue</div>
+    </div>
+  </section>
+
+  <main id="main" class="app hide">
+    <div class="topbar">
+      <div class="brand">SURPRISE <b>FOR YOU</b> ✦</div>
+      <button id="music" class="music-btn" type="button">
+        <span class="equalizer"><i></i><i></i><i></i></span>
+        <span id="musicText">Play Love Song</span>
+      </button>
+    </div>
+
+    <section class="hero">
+      <div class="hero-copy glass">
+        <span class="tag"><b></b> October 3 • Your special day</span>
+        <h2>Happy Birthday,<br>Subham & Jyoti!</h2>
+        <p>Some people make life beautiful just by being in it. You both are a reminder that love is not about perfection, but about the way you make each other feel — warm, safe, and endlessly happy.</p>
+      </div>
+
+      <div class="portrait glass">
+        <div class="orbit"></div>
+        <div class="cake">🎂</div>
+        <div class="cake-label">Made with love ♡</div>
+      </div>
+    </section>
+
+    <section class="countdown">
+      <div class="count glass">
+        <strong id="d">00</strong>
+        <small>Days</small>
+      </div>
+      <div class="count glass">
+        <strong id="h">00</strong>
+        <small>Hours</small>
+      </div>
+      <div class="count glass">
+        <strong id="m">00</strong>
+        <small>Minutes</small>
+      </div>
+      <div class="count glass">
+        <strong id="s">00</strong>
+        <small>Seconds</small>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card glass">
+        <h3>My sweetest wish ✨</h3>
+        <p>May every dream in your heart find its way to you. May your smile stay bright, your heart stay peaceful, and every new year of your life be more beautiful than the last. Love is never a little thing when it feels like home.</p>
+      </article>
+
+      <article class="card glass">
+        <h3>A little message for you 💌</h3>
+        <p class="quote">“You are not just special today, Jyoti. You are special in <em>every moment</em>, every heartbeat, and every beautiful memory. And Subham, you are the calm in the chaos and the warmth in the quiet.”</p>
+        <div class="actions">
+          <button id="reveal" class="btn secondary" type="button">Open secret message</button>
+        </div>
+        <div id="secret" class="secret">Happy Birthday, my love. May this little surprise remind you how deeply you are loved, admired, and celebrated — by me, always. 💗</div>
+      </article>
+    </section>
+
+    <section class="scene glass">
+      <h3>Our cute little love story 🧸</h3>
+      <p>Sometimes we kiss, sometimes we fight, but we always care for each other.</p>
+      <div class="bears">
+        <div class="bear"><i class="ear left"></i><i class="ear right"></i><div class="face"></div><div class="belly"></div><i class="arm left"></i><i class="arm right"></i></div>
+        <div class="kiss-heart">💖</div>
+        <div class="fight">💥</div>
+        <div class="care">🩹</div>
+        <div class="bear two"><i class="ear left"></i><i class="ear right"></i><div class="face"></div><div class="belly"></div><i class="arm left"></i><i class="arm right"></i></div>
+        <div class="bear-text">kiss • silly fight • care • forever</div>
+      </div>
+    </section>
+  </main>
+
+  <audio id="audio" loop preload="auto">
+    <source src="Love%20Song.aac" type="audio/aac" />
+    <source src="love-song.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script>
+    const PIN = '0412';
+    const login = document.getElementById('login');
+    const main = document.getElementById('main');
+    const form = document.getElementById('form');
+    const pinInput = document.getElementById('pin');
+    const audio = document.getElementById('audio');
+    const musicBtn = document.getElementById('music');
+    const musicText = document.getElementById('musicText');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const value = pinInput.value.trim();
+      if (value === PIN) {
+        login.classList.add('hide');
+        main.classList.remove('hide');
+        createHearts();
+        createSparkles();
+        updateCountdown();
+        audio.play().catch(()=>{});
+      } else {
+        pinInput.value = '';
+        pinInput.placeholder = 'Wrong PIN — try again';
+        pinInput.focus();
+      }
+    });
+
+    musicBtn.addEventListener('click', function () {
+      if (audio.paused) {
+        audio.play();
+        musicText.textContent = 'Pause Love Song';
+      } else {
+        audio.pause();
+        musicText.textContent = 'Play Love Song';
+      }
+    });
+
+    document.getElementById('reveal').addEventListener('click', function () {
+      document.getElementById('secret').classList.toggle('open');
+    });
+
+    function getNextBirthday() {
+      const now = new Date();
+      let birthday = new Date(now.getFullYear(), 9, 3, 0, 0, 0);
+      if (birthday <= now) birthday = new Date(now.getFullYear() + 1, 9, 3, 0, 0, 0);
+      return birthday;
+    }
+
+    function updateCountdown() {
+      const target = getNextBirthday();
+      const now = new Date();
+      let diff = target - now;
+      if (diff < 0) diff = 0;
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById('d').textContent = String(days).padStart(2, '0');
+      document.getElementById('h').textContent = String(hours).padStart(2, '0');
+      document.getElementById('m').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('s').textContent = String(seconds).padStart(2, '0');
+    }
+
+    setInterval(updateCountdown, 1000);
+
+    function createSparkles() {
+      const sparkles = document.getElementById('sparkles');
+      sparkles.innerHTML = '';
+      for (let i = 0; i < 56; i++) {
+        const s = document.createElement('span');
+        s.className = 'sparkle';
+        s.style.left = Math.random() * 100 + '%';
+        s.style.top = Math.random() * 100 + '%';
+        s.style.opacity = 0.3 + Math.random() * 0.7;
+        s.style.animationDelay = (Math.random() * 1.5) + 's';
+        s.style.animationDuration = (1.8 + Math.random() * 3) + 's';
+        sparkles.appendChild(s);
+      }
+    }
+
+    function createHearts() {
+      const hearts = document.getElementById('hearts');
+      hearts.innerHTML = '';
+      for (let i = 0; i < 28; i++) {
+        const heart = document.createElement('span');
+        heart.className = 'heart';
+        heart.textContent = i % 2 === 0 ? '💖' : '💗';
+        heart.style.left = Math.random() * 100 + '%';
+        heart.style.fontSize = (18 + Math.random() * 18) + 'px';
+        heart.style.animationDuration = (8 + Math.random() * 9) + 's';
+        heart.style.animationDelay = (Math.random() * 3) + 's';
+        hearts.appendChild(heart);
+      }
+    }
+  </script>
 </body>
 </html>
