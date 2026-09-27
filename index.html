@@ -95,6 +95,7 @@
       font-size: 1rem;
       outline: none;
       transition: 0.25s ease;
+      letter-spacing: 0.2em;
     }
 
     .input-wrap input:focus {
@@ -479,20 +480,20 @@
     <div class="floating-orb orb-three"></div>
 
     <div class="login-box">
-      <div class="badge">Private Key</div>
+      <div class="badge">Enter PIN</div>
       <h1>For Jyoti</h1>
-      <div class="subtitle">Enter the secret code to unlock your birthday surprise</div>
+      <div class="subtitle">Enter the secret PIN to unlock your birthday surprise</div>
 
       <form id="loginForm" class="login-form">
         <div class="input-wrap">
-          <span class="icon">💌</span>
-          <input id="secretInput" type="password" placeholder="Enter special code" required />
+          <span class="icon">🔐</span>
+          <input id="secretInput" type="password" placeholder="Enter 4-digit PIN" maxlength="4" required />
         </div>
 
         <button type="submit" class="login-btn">Open My Gift</button>
       </form>
 
-      <div class="hint">Hint: <strong>october3</strong> or <strong>love0310</strong></div>
+      <div class="hint">Hint: <strong>0310</strong></div>
     </div>
   </div>
 
@@ -566,8 +567,8 @@
     </div>
   </div>
 
-  <audio id="birthdayAudio" loop autoplay playsinline>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+  <audio id="birthdayAudio" loop playsinline>
+    <source src="Love%20Song.aac" type="audio/aac" />
   </audio>
 
   <script>
@@ -578,13 +579,13 @@
     const audio = document.getElementById('birthdayAudio');
     const musicToggle = document.getElementById('musicToggle');
 
-    const validCodes = ['october3', 'love0310', '0310', 'mylove'];
+    const validPIN = '0310';
 
     loginForm.addEventListener('submit', function (e) {
       e.preventDefault();
-      const value = secretInput.value.trim().toLowerCase();
+      const value = secretInput.value.trim();
 
-      if (validCodes.includes(value)) {
+      if (value === validPIN) {
         loginScreen.classList.add('hidden');
         surpriseScreen.classList.remove('hidden');
         createHearts();
@@ -598,7 +599,7 @@
       } else {
         secretInput.value = '';
         secretInput.focus();
-        secretInput.placeholder = 'Wrong code — try again';
+        secretInput.placeholder = 'Wrong PIN — try again';
         secretInput.style.borderColor = 'rgba(255,110,160,0.9)';
       }
     });
